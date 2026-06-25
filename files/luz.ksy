@@ -69,9 +69,16 @@ types:
       - id: unknown1
         type: common::vector3
         if: _root.file_version == 33
+        doc: >
+          v33-only reserved field. Skipped by client (ptr += 12) in every
+          known build from 0.179.12 through 1.10.64. Never read into any
+          struct or used at runtime.
       - id: unknown2
         type: f4
         if: _root.file_version == 33
+        doc: >
+          v33-only reserved field. Skipped by client (ptr += 4) in every
+          known build. See unknown1.
       - id: scene_color_r
         type: u1
         if: _root.file_version >= 33
